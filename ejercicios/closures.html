@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closures</title>
+  </head>
+  <body>
+    <a href="/ejercicios/">Back</a>
+    <script>
+      //Closures
+      //printColor
+
+      // IIFE
+      (function () {
+        let color = "green";
+
+        function printColor() {
+          console.log(color);
+        }
+
+        printColor();
+      })();
+
+      //printColor dentro de un iife
+
+      // Funciones que regresan Funciones
+      function makeColorPrinter(color) {
+        let colorMessage = `The Color is ${color}`;
+
+        return function () {
+          console.log(colorMessage);
+        };
+      }
+
+      let greenColorPrinter = makeColorPrinter("green");
+      console.log(greenColorPrinter());
+      // variables privadas
+
+      // const counter = {
+      //   count: 3,
+      // };
+      // console.log(counter.count);
+      function makeCounter(n) {
+        let count = n;
+
+        return {
+          increase: function () {},
+          decrease: function () {},
+          getCount: function () {},
+        };
+      }
+
+      let counter = makeCounter(7);
+
+      console.log(counter.count);
+    </script>
+  </body>
+</html>

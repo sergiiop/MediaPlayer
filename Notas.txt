@@ -1,0 +1,19 @@
+El DOM, es la representacion de un HTML
+
+va leyendo etiqueta por etiqueta y va creando el DOM
+
+DOMContentLoad es cuando todo el contenido ya esta cargado
+
+Scripts Externos o embebido
+
+Los embebidos son los que paran el proceso de rendere del DOM para ejecutarse inmediatamente y los externos async funcionan asyncronamente y cuando ya estan listos hay es cuando para el proceso del DOM
+
+externos defer esperan que el DOM renderé todo el documento HTML para luego ejecutar la respuesta
+orden de ejecución
+
+
+Closures
+Son funciones que regresan una función o un objeto con funciones que mantienen la variable que fueron declaradas fuera de su scope
+Los Closures nos sirven para tener algo parecido a variables privadas, caracteristicas que no tiene JS por default. Es decir encapsulan variables que no pueden ser modificadas directamente por otros objetos, Sólo por funciones pertenecientes al mismo.
+
+
