@@ -16,4 +16,5 @@ Closures
 Son funciones que regresan una función o un objeto con funciones que mantienen la variable que fueron declaradas fuera de su scope
 Los Closures nos sirven para tener algo parecido a variables privadas, caracteristicas que no tiene JS por default. Es decir encapsulan variables que no pueden ser modificadas directamente por otros objetos, Sólo por funciones pertenecientes al mismo.
 
+this se refiere a un objeto. Ese objeto es el que actualmente está ejecutando un pedazo de código.
 

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This</title>
+  </head>
+  <body>
+    <a href="/ejercicios/">Back</a>
+    <script>
+      // this en el scope global
+      // console.log(`this: ${this}`); // this en el contexto global siempre sera windows
+
+      // this en el scope de una función
+
+      // function whoIsThis() {
+      //   return this;
+      // }
+
+      // console.log(`who is this: ${whoisThis()}`); //Cuando se ejecuta una funcion directamente se toma el valor por defecto que es Windows
+
+      // this en el scope de una función en strict mode
+
+      // function whoIsThisStrict() {
+      //   "use strict"; //De este modo se enciende el modo use strict, esto sirve para corregir algunos errores
+      //   return this;
+      // }
+
+      // console.log(`who is this: ${whoisThisStrict()}`);
+
+      // this en el contexto de un objeto
+      const person = {
+        name: "Sergio",
+        saludar: function () {
+          console.log(`Hola soy ${this.name}`); // Esta funcion esta siendo ejecutada por el objeto person, que adentro esta this. y este this se esta refiriendo al objeto que esta ejecutando ese codigo en este caso es el objeto person
+        },
+      };
+
+      person.saludar();
+
+      // this cuando sacamos una función de un objeto
+
+      const accion = person.saludar;
+      accion(); //Como accion no se esta llamando en el contexto del objeto, solo se esta llamando directamente y esto hace que el this.name no exista
+
+      // this en el contexto de una "clase"
+
+      //Las clases no son iguales a la de otros lenguajes pero resulta util llamarlas así
+
+      function Person(name, apellido) {
+        //se le coloca un valor para luego pasarlo por agurmento esto hace la funcion de constructor
+        //todas las funciones tienen el valor de this que es un objeto vacio que seria como this={}
+
+        this.name = name;
+        this.apellido = apellido;
+      }
+
+      Person.prototype.saludar = function () {
+        // para darle un metodo a la "clase" se hace atravez de prototype
+        console.log(`Me llamo ${this.name} Mi apellido es ${this.apellido}`);
+      };
+
+      const nombre = new Person("Sergio", "Perez");
+      // Se hace la instancia del objeto
+      //this se hace a la instancia del objeto
+      nombre.saludar();
+    </script>
+  </body>
+</html>
